@@ -28,8 +28,8 @@ void dijkstra(int source, vector<pair<int, int>> graph[])
         node = pq.top().second;
         distance = pq.top().first;
         pq.pop();
-        if (distance > dis[node])
-            continue;
+        // if (distance > dis[node])
+        //     continue;
         for (auto it : graph[node])
         {
             int to_node = it.second;
@@ -37,7 +37,7 @@ void dijkstra(int source, vector<pair<int, int>> graph[])
             if (dis[to_node] > dis[node] + to_distance)
             {
                 dis[to_node] = dis[node] + to_distance;
-                pq.push({to_distance, to_node});
+                pq.push({dis[to_node], to_node});
             }
         }
     }
