@@ -18,9 +18,9 @@ void solve(void)
     int arr[n+1][n+1];
     for (int i = 0; i < n; i++)
     {
-            int v, e;
-            cin >> v >> e;
-            arr[v][e] = 1;
+            int v1, v2,w;
+            cin >> v1 >> v2>>w;
+            arr[v1][v2] = w;
     }
     int p[n+1][n+1];
     for (int i = 1; i <= n; i++)
