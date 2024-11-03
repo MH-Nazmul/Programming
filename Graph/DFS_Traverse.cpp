@@ -9,7 +9,7 @@ const int N = 2e5 + 10;
 bool vis[N];
 vector<int> graph[N];
 // undirected graph rooted at 1 DFS Traversing
-void dfs(int vertex, int par)
+void dfs(int vertex)
 {
     vis[vertex] = true;
     cout << vertex << " ";
@@ -17,7 +17,7 @@ void dfs(int vertex, int par)
     {
         if (vis[child])
             continue;
-        dfs(child, vertex);
+        dfs(child);
     }
 }
 void solve(void)
@@ -31,7 +31,7 @@ void solve(void)
         graph[v1].pb(v2);
         graph[v2].pb(v1);
     }
-    dfs(1, -1);
+    dfs(1);
 }
 
 signed main()
