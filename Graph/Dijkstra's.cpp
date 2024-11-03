@@ -4,13 +4,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define pb push_back
-#define nl cout << "\n"
-#define all(x) x.begin(), x.end()
-#define allr(x) x.rbegin(), x.rend()
-#define f(a, b, c) for (int a = b; a < c; a++)
-#define cin(vec, n) \
-    f(i, 0, n) { cin >> vec[i]; }
-#define int long long
 const int N = 2e5 + 10;
 const int M = 1e9 + 7;
 const int INF = 1e18;
@@ -52,7 +45,7 @@ void solve(void)
 {
     int edge;
     cin >> NODE >> edge;
-    vector<pair<int, int>> graph[NODE + 1];
+    vector<pair<int, int>> graph[N];
     for (int i = 0; i < edge; i++)
     {
         int v1, v2, w;
