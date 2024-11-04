@@ -39,25 +39,35 @@ void Display(Node *head)
     }
     cout << endl;
 }
-bool search(Node *node, int key)
+void search(Node *node, int key)
 {
+    int id=-1;
     while (node->next != nullptr)
     {
         if (node->data == key)
-            return true;
+            {cout<<"Founded at location: "<<node<<" before: "<<node->next->data;return;}
         node = node->next;
     }
-    return false;
+    cout<<"Not found";
+    return;
 }
 int main()
 {
     Node *node = nullptr;
-    InsertAtTail(node, 1);
-    InsertAtTail(node, 4);
-    InsertAtTail(node, 5);
-    InsertAtTail(node, 8);
-    InsertAtHead(node, 0);
+    cout << "enter the numbers of nodes you want to add:\n";
+    int num;
+    cin >> num;
+    cout << "enter the nodes:\n";
+    for (int i = 0; i < num; i++)
+    {
+        int x;
+        cin >> x;
+        InsertAtTail(node, x);
+    }
     Display(node);
-    cout << search(node, 5);
+    cout<<"enter the node to search:";
+    int nd;
+    cin>>nd;
+    search(node, nd);
     return 0;
 }

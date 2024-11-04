@@ -1,49 +1,59 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 class Node
 {
 public:
     int data;
     Node *next;
-    Node(int val)
-    {
-        data = val;
-        next = nullptr;
-    }
+    Node(int val) : data(val), next(nullptr) {}
 };
 
-void InsertAtTail(Node *&node, int data,Node* start)
+void InsertAtTail(Node *&node, int data, Node *&start)
 {
-    Node *head = new Node(data);
-    Node *temp = node;
+    Node *newNode = new Node(data);
     if (node == nullptr)
     {
-        node = head;
-        node->next=start;
+        node = newNode;
+        start = node;
+        node->next = start;
         return;
     }
+
+    Node *temp = node;
     while (temp->next != start)
         temp = temp->next;
-    temp->next = head;
+
+    temp->next = newNode;
+    newNode->next = start;
 }
-void Display(Node *head,Node* start)
+
+void Display(Node *head, Node *start)
 {
-    while (head != start)
+    Node *tmp = head;
+    if (tmp == nullptr)
+        return;
+    do
     {
-        cout << head->data << "->";
-        head = head->next;
-    }
-    cout << endl;
+        cout << tmp->data << "->";
+        tmp = tmp->next;
+    } while (tmp != start);
+    cout << "(back to start)" << endl;
 }
 
 int main()
 {
     Node *node = nullptr;
-    Node* start=node;
-    InsertAtTail(node, 1, start);
-    InsertAtTail(node, 4, start);
-    InsertAtTail(node, 5, start);
-    InsertAtTail(node, 8, start);
-    Display(node,start);
+    Node *start = node;
+    int num;
+    cin >> num;
+    while (num--)
+    {
+        int x;
+        cin >> x;
+        InsertAtTail(node, x, start);
+    }
+
+    Display(node, start);
     return 0;
 }

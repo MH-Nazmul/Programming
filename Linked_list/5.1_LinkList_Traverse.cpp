@@ -43,11 +43,17 @@ void Display(Node *head)
 int main()
 {
     Node *node = nullptr;
-    InsertAtTail(node, 1);
-    InsertAtTail(node, 4);
-    InsertAtTail(node, 5);
-    InsertAtTail(node, 8);
-    InsertAtHead(node, 0);
+    cout << "enter the numbers of nodes you want to add:\n";
+    int num;
+    cin >> num;
+    cout << "enter the nodes:\n";
+
+    for (int i = 0; i < num; i++)
+    {
+        int x;
+        cin >> x;
+        InsertAtTail(node, x);
+    }
     Display(node);
     return 0;
 }

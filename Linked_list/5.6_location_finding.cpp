@@ -17,16 +17,22 @@ void InsertAtHead(Node *&node, int val)
     n->next = node;
     node = n;
 }
-Node* location_find(Node *&node, int n)
+void location_find(Node *&node, int n)
 {
     Node *tmp = node;
     if (node == nullptr)
-        return nullptr;
+        return;
     while (tmp->data != n)
     {
         tmp = tmp->next;
     }
-    return tmp->next;
+    if (tmp == nullptr)
+    {
+        cout << "Not found";
+        return;
+    }
+    cout<<"Founded at :"<<tmp;
+    return;
 }
 
 void Display(Node *head)
@@ -36,21 +42,28 @@ void Display(Node *head)
         cout << head->data << "->";
         head = head->next;
     }
+   
     cout << endl;
 }
 
 int main()
 {
     Node *node = nullptr;
-    InsertAtHead(node, 8);
-    InsertAtHead(node, 5);
-    InsertAtHead(node, 4);
-    InsertAtHead(node, 1);
-    InsertAtHead(node, 0);
+    cout << "enter the numbers of nodes you want to add:\n";
+    int num;
+    cin >> num;
+    cout << "enter the nodes:\n";
+
+    for (int i = 0; i < num; i++)
+    {
+        int x;
+        cin >> x;
+        InsertAtHead(node, x);
+    }
     Display(node);
     cout << "insert the node which loc is to be found:\n";
     int n;
     cin >> n;
-    cout<<location_find(node,n);
+    location_find(node,n);
     return 0;
 }
