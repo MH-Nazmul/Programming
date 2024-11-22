@@ -1,0 +1,1 @@
+{"name":"Local: Labyrinth","url":"e:\\Skills\\GIThub\\Programming\\Graph\\CSES_GRAPH\\Labyrinth.cpp","tests":[{"id":1732074250531,"input":"5 8\n########\n#.A#...#\n#.##.#B#\n#......#\n########\nOutpu","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Skills\\GIThub\\Programming\\Graph\\CSES_GRAPH\\Labyrinth.cpp","group":"local","local":true}
