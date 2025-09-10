@@ -1,0 +1,1 @@
+{"name":"Local: LCA_Euler_tour","url":"/mnt/CSE/Skills/GITHUB/Programming/Graph/LCA_Euler_tour.cpp","tests":[{"id":1757498595109,"input":"9 3\n1 3\n1 5\n2 5\n3 4\n3 7\n5 6\n7 8\n3 9\n\n8 3\n2 4\n6 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/CSE/Skills/GITHUB/Programming/Graph/LCA_Euler_tour.cpp","group":"local","local":true}

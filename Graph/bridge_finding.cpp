@@ -27,7 +27,13 @@ void dfs(int node, int par, vector<int> graph[])
             dfs(child, node, graph);
             low[node] = min(low[node], low[child]);
             if (low[child] > tin[node])
-                bridges.push_back({node, child});
+            {
+                if (repeated[{node, child}] == false)
+                {
+                    bridges.push_back({node, child});
+                    repeated[{node, child}] = true;
+                }
+            }
         }
         else
         {
