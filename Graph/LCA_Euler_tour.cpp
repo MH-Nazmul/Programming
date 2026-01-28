@@ -88,7 +88,6 @@ void euler(int root, vector<int> *graph)
     dfs(1, -1, graph);
     sparse(nodes.size());
 }
-
 // euler end
 void MH(void)
 {
